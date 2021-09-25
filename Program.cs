@@ -1,24 +1,34 @@
 ﻿using System;
 
-namespace staticc1
+namespace staticc2
 {
+    static class product
+    {
+        public static string productnm;
+        public static int prod_id ;
+        public static int price;
+        static product()
+        {
+             productnm ="table";
+             prod_id = 0045;
+             price = 2500;
+        }
+        public static void getDetails()
+        {
+            Console.WriteLine("name of Product is: " + productnm + "\nproduct Id is: " + prod_id + "\nPrice of Table is: " + price);
+        }
+        public static void disc()
+        {
+            int d_price = price / 20;
+            Console.WriteLine("After applying 20% of Discount price of Table is: "+(price-d_price));
+        }
+    }
     class Program
     {
-        int x = 100;
-        static int y=200;
-        public Program(int a)
-        {
-            this.x = a;
-           
-        }
         static void Main(string[] args)
         {
-            
-            Program c = new Program(20);
-            Program cc = new Program(320);
-            Console.WriteLine(c.x);
-            Console.WriteLine(cc.x);
-            Console.WriteLine(y);          
+            product.getDetails();
+            product.disc();
         }
     }
 }
